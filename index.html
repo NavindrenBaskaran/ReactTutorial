@@ -23,6 +23,13 @@
 
               },
 
+
+              displayCreatorName: function(){
+                this.setState({
+                  name: "Navindren"
+                })
+              },
+
               // the intial state of the component
               getInitialState: function(){
                 return {
@@ -34,9 +41,11 @@
                   return (
                     // render the component's html to the mounting point
                     <div class="my-component">
+                      <h1>Name: {this.state.name}</h1>
                       <h1>Count: {this.state.count}</h1>
-                      // update the my custom components state when button is clicked
                       <button type="button" onClick={this.incrementCount}>Increment</button>
+                      <br/>
+                      <button type="button" onClick={this.displayCreatorName}>Creator Name</button>
                     </div>
                   );
                 }
