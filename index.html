@@ -12,15 +12,18 @@
           <div id="mount-point"></div>
           <script type="text/jsx">
 
+            // custom components
             var MyComponent = React.createClass({
 
               incrementCount: function(){
+                  // setting the state of the component
                   this.setState({
                     count: this.state.count + 1
                   });
 
               },
 
+              // the intial state of the component
               getInitialState: function(){
                 return {
                   count: 12
@@ -29,14 +32,17 @@
 
                 render: function(){
                   return (
+                    // render the component's html to the mounting point
                     <div class="my-component">
                       <h1>Count: {this.state.count}</h1>
+                      // update the my custom components state when button is clicked
                       <button type="button" onClick={this.incrementCount}>Increment</button>
                     </div>
                   );
                 }
             });
 
+            // render my custom component
             ReactDOM.render(<MyComponent name= "Navindren" />,document.getElementById('mount-point'));
 
 
